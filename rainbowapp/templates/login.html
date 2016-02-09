@@ -1,0 +1,23 @@
+<html>
+<body>
+<h1 align="center">login</h1>
+<form role="form" action="/pikachu/login_check/" method="post">
+    {% csrf_token %}
+<p align="center">
+    
+	username:   <input type = "text" name = "username" id = "username"><br><br>
+	password:   <input type = "password" name = "password" id = "password"><br><br>
+	
+    <button type="submit">Submit</button>
+
+</form>
+<p  align="center">
+<a href="/pikachu/forgotpwd/" method="get">Forgot password</a>
+</p>
+<form role="form" action="/pikachu/registration/" method="post">
+	{% csrf_token %}
+	<p align="center"><button type="submit" align="center">Register</button></p>
+</form>
+</p>
+</body>
+</html>

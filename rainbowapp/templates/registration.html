@@ -1,0 +1,36 @@
+<html>
+<body>
+<form action="/pikachu/registration_check/" method ="POST" type="submit">{% csrf_token%}
+username:<br>
+<input type="text" name="username" id="username"a autofocus required = "required"/>
+<br>
+
+email:<br>
+<input type = "text" name = "email" id = "email" required = "required"/>
+<br>
+
+<br>
+password:
+<br><br>
+<input type = "password" name = "password" id = "password" required = "required"/>
+<br>
+confirm password:
+<br><br>
+<input type =  "password" name = "reenter password" required = "required"/>
+<br><br>
+mobilenum:<br>
+<input type = "text" name = "mobilenum" id = "mobilenum" required = "required"/>
+<br><br>
+address: <br>
+<textarea name="address" id="address" rows = "5" cols = "20"></textarea>
+<br><br><br>
+<input type = "submit" value="Register"/>
+<!-- {{form.as_table}} -->
+
+</form>
+<form role="form" action="/pikachu/login/" method="post">
+	{% csrf_token %}
+	<button type="submit">Login</button>
+</form>
+</body>
+</html>
