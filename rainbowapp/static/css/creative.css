@@ -448,6 +448,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl {
     padding: 15px 30px;
 }
+.btn-sm {
+    padding: 10px 10px;
+}
 
 ::-moz-selection {
     text-shadow: none;

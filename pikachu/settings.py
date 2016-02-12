@@ -80,11 +80,7 @@ DATABASES = {
         'ENGINE': 'mysql.connector.django',
         'NAME': 'pikachu',
         'USER':'root',
-<<<<<<< HEAD
-        'PASSWORD':'sample123',     
-=======
-        'PASSWORD':'root',     
->>>>>>> 0ce826a6534f1f268df92615cad866e8a1bab986
+        'PASSWORD':'sample123', 
     }
 }
 

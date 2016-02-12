@@ -1,42 +1,26 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Service provider</title>
-
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
-
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}" type="text/css">
-
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="{% static "css/animate.min.css" %}" type="text/css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static "css/creative.css" %}" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body id="page-top">
-
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,7 +33,6 @@
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Service Provider</a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -60,11 +43,15 @@
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#register">Register</a>
+                    </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -75,10 +62,11 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
+                <h1>Service provider booking</h1>
                 <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <p>Ever wondered what to do when you need a quick fix on anything at your house?
+                    Are you new to the neightbourhood and want to know what all services available here?</p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find out</a>
             </div>
         </div>
     </header>
@@ -87,10 +75,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <h2 class="section-heading">What we do?</h2>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                    <p class="text-faded">We provide wide range of services like plumbing, electrical work, cleaning, painting, moving and all kinds of repairs.</p>
+                    <a href="#login" class="btn btn-default btn-xl page-scroll">Get Started!</a>
                 </div>
             </div>
         </div>
@@ -109,36 +97,107 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary" data-wow-delay=".5s"></i>
+                        <h3>Respect</h3>
+                        <p class="text-muted">Each customer is a diamond for us!</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".5s"></i>
+                        <h3>Responsiveness</h3>
+                        <p class="text-muted">We provide quick services based on customer satisfaction.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".5s"></i>
+                        <h3>Updates</h3>
+                        <p class="text-muted">Constant updates are provided for ease usability.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".5s"></i>
                         <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
+                        <p class="text-muted">We love you!! </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- My custom content attempt for login access -->
+    <section class="bg-primary" id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Login</h2>
+                    <hr class="light">
+                        <form role="form" action="/pikachu/login_check/" method="post">
+                        {% csrf_token %}
+                        <p align="center">
+                        username:   <input type = "text" name = "username" id = "username" class="form-control" style="width:40%" required="required"><br>
+                        password:   <input type = "password" name = "password" id = "password" class="form-control" style="width:40%" required="required"><br>                     
+                        &emsp;&emsp;<button type="submit" class="btn btn-default btn-xl">Login</button>&emsp;
+                        <a href="#register" class="btn btn-default btn-xl page-scroll" method="get">Register</a>
+                        <br><br>
+                        &emsp;<a href="/pikachu/forgotpwd/" class="btn btn-default btn-sm" method="get">Forgot password</a>
+                        </form>
 
+                    <!-- <a href="#about" class="btn btn-default btn-xl page-scroll">Get Started!</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Registration</h2>
+                    <hr class="primary">
+                        <form action="/pikachu/registration_check/" method ="POST" type="submit">{% csrf_token%}
+            FirstName:<br>
+            <input type="text" name="firstname" id="firstname" autofocus required = "required"/>
+            <br>
+
+            LastName:<br>
+            <input type="text" name="lastname" id="lastname" required = "required"/>
+            <br>
+
+            email:<br>
+            <input type = "text" name = "email" id = "email" required = "required"/>
+            <br><br>
+
+            username:<br>
+            <input type = "text" name = "username" id = "username" required="required" />
+            <br><br>
+
+            password:<br>
+            <input type = "password" name = "password" id = "password" required = "required"/>
+            <br><br>
+
+            confirm password:<br>
+            <input type =  "password" name = "repassword" id = "repassword" required = "required"/>
+            <br><br>
+
+            mobilenumber:<br>
+            <input type = "text" name = "mobilenumber" id = "mobilenumber" required = "required"/>
+            <br><br>
+
+            address: <br>
+            <textarea name="address" id="address" rows = "5" cols = "20"></textarea>
+            <br><br><br>
+
+            <input type = "submit" value="Register"/>
+        </form>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Me adding my custom Content  -->
     <section class="no-padding" id="portfolio">
         <div class="container-fluid">
             <div class="row no-gutter">
@@ -266,19 +325,18 @@
     </section>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{% static "js/jquery.js" %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="{% static "js/jquery.easing.min.js" %}"></script>
+    <script src="{% static "js/jquery.fittext.js" %}"></script>
+    <script src="{% static "js/wow.min.js" %}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
+    <script src="{% static "js/creative.js" %}"></script>
 
 </body>
-
 </html>
