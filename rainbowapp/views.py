@@ -9,7 +9,9 @@ from django.template import RequestContext
 
 # Create your views here.
 def home(request):
-	return render_to_response('home.html')
+	args = {}
+	args.update(csrf(request))
+	return render_to_response('index.html',args)
 def login(request):
     args = {}
     args.update(csrf(request))
@@ -34,7 +36,6 @@ def login_check(request):
 		html = "<html><body>username Error</body></Html>"
 		return HttpResponse(html)
 def registration(request):
-
     args = {}
     args.update(csrf(request))
     return render_to_response('registration.html',args)
@@ -51,8 +52,7 @@ def registration_check(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/pikachu/login/')
-        else:
-            
+        else:           
             return render_to_response('mytemplate.html',{'form':form})
     return render_to_response('registration.html',{'form':form}, context_instance=RequestContext(request))
 def profile(request):

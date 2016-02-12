@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Service provider</title>
+    <script src="signup_val.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}" type="text/css">
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="{% static "css/animate.min.css" %}" type="text/css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static "css/creative.css" %}" type="text/css">
+</head>
+
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Service Provider</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#register">Register</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Service provider booking</h1>
+                <hr>
+                <p>Ever wondered what to do when you need a quick fix on anything at your house?
+                    Are you new to the neightbourhood and want to know what all services available here?</p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find out</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">What we do?</h2>
+                    <hr class="light">
+                    <p class="text-faded">We provide wide range of services like plumbing, electrical work, cleaning, painting, moving and all kinds of repairs.</p>
+                    <a href="#login" class="btn btn-default btn-xl page-scroll">Get Started!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">At Your Service</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary" data-wow-delay=".5s"></i>
+                        <h3>Respect</h3>
+                        <p class="text-muted">Each customer is a diamond for us!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".5s"></i>
+                        <h3>Responsiveness</h3>
+                        <p class="text-muted">We provide quick services based on customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".5s"></i>
+                        <h3>Updates</h3>
+                        <p class="text-muted">Constant updates are provided for ease usability.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".5s"></i>
+                        <h3>Made with Love</h3>
+                        <p class="text-muted">We love you!! </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- My custom content attempt for login access -->
+    <section class="bg-primary" id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Login</h2>
+                    <hr class="light">
+                        <form role="form" action="/pikachu/login_check/" method="post">
+                        {% csrf_token %}
+                        <p align="center">
+                        username:   <input type = "text" name = "username" id = "username" class="form-control" style="width:40%" required="required"><br>
+                        password:   <input type = "password" name = "password" id = "password" class="form-control" style="width:40%" required="required"><br>                     
+                        &emsp;&emsp;<button type="submit" class="btn btn-default btn-xl">Login</button>&emsp;
+                        <a href="#register" class="btn btn-default btn-xl page-scroll" method="get">Register</a>
+                        <br><br>
+                        &emsp;<a href="/pikachu/forgotpwd/" class="btn btn-default btn-sm" method="get">Forgot password</a>
+                        </form>
+
+                    <!-- <a href="#about" class="btn btn-default btn-xl page-scroll">Get Started!</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Registration</h2>
+                    <!-- <hr class="primary"> -->
+                    <center>
+                        <form role="form" action="/pikachu/registration_check/" method ="POST">
+                        {% csrf_token%}
+            FirstName:
+            <input type="text" name="firstname" id="firstname" autofocus class="form-control" style="width:40%" required = "required"/>
+            <br>
+
+            LastName:
+            <input type="text" name="lastname" id="lastname" class="form-control" style="width:40%" required = "required"/>
+            <br>
+
+            email:
+            <input type = "text" name = "email" id = "email" class="form-control" style="width:40%" required = "required"/>
+            <br>
+
+            username:
+            <input type = "text" name = "username" id = "username" class="form-control" style="width:40%" required="required" />
+            <br>
+
+            password:<br>
+            <input type = "password" name = "password" id = "password" class="form-control" style="width:40%" required = "required"/>
+            <br>
+
+            confirm password:<br>
+            <input type =  "password" name = "repassword" id = "repassword" class="form-control" style="width:40%" required = "required"/>
+            <br>
+
+            mobilenumber:
+            <input type = "text" name = "mobilenumber" id = "mobilenumber" class="form-control" style="width:40%" required = "required"/>
+            <br>
+
+            address:
+            <textarea name="address" id="address" rows = "5" cols = "20" class="form-control" style="width:40%" ></textarea>
+            <br><br>
+
+            <button type="submit" class="btn btn-primary btn-xl">Register</button>
+        </form>
+    </center>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Me adding my custom Content  -->
+
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="{% static "img/portfolio/1.jpg" %}" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="{% static "img/portfolio/2.jpg" %}" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="{% static "img/portfolio/3.jpg" %}" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="{% static "img/portfolio/4.jpg" %}" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="{% static "img/portfolio/5.jpg" %}" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#" class="portfolio-box">
+                        <img src="{% static "img/portfolio/6.jpg" %}" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2>Free Download at Start Bootstrap!</h2>
+                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+            </div>
+        </div>
+    </aside>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="primary">
+                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                    <p>123-456-6789</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="{% static "js/jquery.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static "js/jquery.easing.min.js" %}"></script>
+    <script src="{% static "js/jquery.fittext.js" %}"></script>
+    <script src="{% static "js/wow.min.js" %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static "js/creative.js" %}"></script>
+
+</body>
+</html>
