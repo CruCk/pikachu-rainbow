@@ -25,12 +25,6 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-            	<!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button> -->
                 <a class="navbar-brand" href="#page-top">Service Provider</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,11 +54,33 @@
     <!-- <header>
     </header> -->
 	<!-- I added this!!! -->
-	<section bgcolor="#FF0000">
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                Side bar
+                {% for elem in orderDetails %}
+                    <div>
+                        Employee: {{elem.employee.empfirstname}} {{elem.employee.emplastname}}
+                        <br>
+                        Phone no. {{elem.employee.empmobilenumber}}
+                        <br>
+                        {{elem.employee.empfield}}
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+            <div class="col-md-10">
+                Main content
+                hello user!!! {{username}}
+            </div>
+        </div>
+    </div>
+        <!-- <div class="container">
 
-		hello user!!! {{username}}
-		<p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p>
-	</section>
+        
+        <p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p><p>ads</p>
+    </div> -->
 
 <br><br><br>
 <form role="form" action="/pikachu/logout/" method="get">

@@ -34,3 +34,6 @@ class OrderDetails(models.Model):
 	employee = models.ForeignKey(EmployeeDetails, on_delete=models.CASCADE)
 	customerRating = models.IntegerField(default=0)
 	employeeRating = models.IntegerField(default=0)
+	
+
+

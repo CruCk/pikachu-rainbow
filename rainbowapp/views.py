@@ -6,6 +6,7 @@ from forms import CustomerDetails
 from django.http import HttpResponseRedirect,HttpResponse
 from forms import CustomerDetailsForm
 from django.template import RequestContext
+from rainbowapp.models import CustomerDetails, EmployeeDetails, OrderDetails
 
 # Create your views here.
 def index(request):
@@ -20,7 +21,7 @@ def login_check(request):
 	username = request.POST.get('username','')
 	password = request.POST.get('password','')
 	try:
-		user = CustomerDetails.objects.get(email=username)
+		user = CustomerDetails.objects.get(username=username)
 	except CustomerDetails.DoesNotExist:
 		return HttpResponseRedirect('/pikachu')
 	if user is not None:
@@ -36,6 +37,7 @@ def login_check(request):
 def registration(request):
     args = {}
     args.update(csrf(request))
+    request.session['name'] = ''
     return render_to_response('index.html',args)
 def registration_check(request):
     form = CustomerDetailsForm()
@@ -50,10 +52,13 @@ def registration_check(request):
             return render_to_response('mytemplate.html',{'form':form})
     return render_to_response('registration.html',{'form':form}, context_instance=RequestContext(request))
 def home(request):
-		return render_to_response('home.html',{'username' : request.session['name']})
+	if request.session['name'] == '':
+		return HttpResponseRedirect('/pikachu')
+	userDetails = CustomerDetails.objects.get(username=request.session['name'])
+	orderDetails = OrderDetails.objects.filter(customer_id=userDetails.id)
+	return render_to_response('home.html',{'username' : request.session['name'], 'orderDetails':orderDetails})
 def logout(request):
-	args = {}
-	args.update(csrf(request))
-	return render_to_response('index.html')
+	request.session['name'] = ''
+	return HttpResponseRedirect('/pikachu')
 def forgotpwd(request):
 	return render_to_response('forgotdetails.html')
