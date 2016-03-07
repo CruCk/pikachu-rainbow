@@ -1,0 +1,11 @@
+<html><head></head>
+
+<body>
+<form role="form" action="/pikachu/regAdmin_check/" method="post">
+                        {% csrf_token %}
+                        <p align="center">
+                        username:   <input type = "text" name = "regAdminusername" id = "regAdminusername" class="form-control" style="width:40%" required="required"><br>
+                        password:   <input type = "password" name = "regAdminpassword" id = "regAdminpassword" class="form-control" style="width:40%" required="required"><br>
+                        <button type="submit">Login</button>
+                        </form>
+</body></html>

@@ -34,6 +34,12 @@ class OrderDetails(models.Model):
 	employee = models.ForeignKey(EmployeeDetails, on_delete=models.CASCADE)
 	customerRating = models.IntegerField(default=0)
 	employeeRating = models.IntegerField(default=0)
-	
 
-
+class RegAdmin(models.Model):
+	regAdminfirstname = models.CharField(max_length=50,blank=False,default=None)
+	regAdminlastname = models.CharField(max_length=50,blank=False,default=None)
+	regAdminusername = models.CharField(max_length=20, unique=True)
+	regAdminemail = models.EmailField(unique=True)
+	regAdminpassword = models.CharField(max_length=20)
+	regAdminmobilenumber = models.CharField(max_length=15, unique = True)
+	regAdminaddress = models.CharField(max_length=500)
