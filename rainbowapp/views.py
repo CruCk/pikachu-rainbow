@@ -106,7 +106,4 @@ def regAdminCheck(request):
 def regAdminHome(request):
 	if request.session['regAdminname'] == '':
 		return HttpResponseRedirect('/pikachu')
-	# userDetails = regAdmin.objects.get(regAdminusername=request.session['regAdminname'])
-	# print userDetails.id
-	# orderDetails = OrderDetails.objects.filter(customer_id=userDetails.id)
 	return render_to_response('regAdminhome.html')

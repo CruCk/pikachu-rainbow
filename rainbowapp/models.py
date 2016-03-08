@@ -15,10 +15,10 @@ class CustomerDetails(models.Model):
 
 class EmployeeDetails(models.Model):
 	FIELDS = (
-	('ELECT', 'electrician'),
-	('CLEAN','cleaning'),
-	('PLUMB','plumbing'),
-	('LECTR','electronics'),
+	('Electrician', 'electrician'),
+	('Cleaning','cleaning'),
+	('Plumbing','plumbing'),
+	('Electronics','electronics'),
 	)
 	empfirstname = models.CharField(max_length=50,blank=False,default=None)
 	emplastname = models.CharField(max_length=50,blank=False,default=None)
@@ -27,7 +27,7 @@ class EmployeeDetails(models.Model):
 	emppassword = models.CharField(max_length=20)
 	empmobilenumber = models.CharField(max_length=15, unique = True)
 	empaddress = models.CharField(max_length=500)
-	empfield = models.CharField(max_length=5, choices=FIELDS)
+	empfield = models.CharField(max_length=20, choices=FIELDS)
 
 class OrderDetails(models.Model):
 	customer = models.ForeignKey(CustomerDetails, on_delete=models.CASCADE)
