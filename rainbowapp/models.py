@@ -11,6 +11,8 @@ class CustomerDetails(models.Model):
 	password = models.CharField(max_length=20)
 	mobilenumber = models.CharField(max_length=15, unique = True)
 	address = models.CharField(max_length=500)
+	def __str__(self):
+		return self.username
 
 
 class EmployeeDetails(models.Model):
@@ -28,6 +30,8 @@ class EmployeeDetails(models.Model):
 	empmobilenumber = models.CharField(max_length=15, unique = True)
 	empaddress = models.CharField(max_length=500)
 	empfield = models.CharField(max_length=20, choices=FIELDS)
+	def __str__(self):
+		return self.empusername
 
 class OrderDetails(models.Model):
 	customer = models.ForeignKey(CustomerDetails, on_delete=models.CASCADE)
@@ -43,3 +47,5 @@ class RegAdmin(models.Model):
 	regAdminpassword = models.CharField(max_length=20)
 	regAdminmobilenumber = models.CharField(max_length=15, unique = True)
 	regAdminaddress = models.CharField(max_length=500)
+	def __str__(self):
+		return self.regAdminusername

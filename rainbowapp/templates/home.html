@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="pikachu">
     <title>Service provider</title>
     
     <!-- Bootstrap Core CSS -->
@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="{% static "css/animate.min.css" %}" type="text/css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static "css/creative.css" %}" type="text/css">
+        <!-- jQuery -->
+    <script src="{% static "js/jquery.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
 </head>
 <body id="page-top">
 	<nav id="navbar" class="navbar-collapse collapse" style="background-color:#f8f8f8">
@@ -51,7 +56,7 @@
     <br><br>
     <div class="container">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 Side bar code
                 {% for elem in orderDetails %}
                     <div>
@@ -66,10 +71,12 @@
                     <li> No previous orders are present. Make one</li>
                 {% endfor %}
             </div>
-            <div class="col-md-1"></div>
             <div class="col-md-9">
-                Main content
-                
+
+                <button data-toggle="collapse" data-target="#newOrder" class="btn btn-primary btn-sm">Make new order</button>
+                <div id="newOrder" class="collapse">
+                    
+                </div>
             </div>
         </div>
     </div>

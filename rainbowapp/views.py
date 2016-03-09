@@ -79,6 +79,8 @@ def logout(request):
 def forgotpwd(request):
 	return render_to_response('forgotdetails.html')
 
+# **********************************************************************************************************
+# Regional Admin details
 def regAdmin(request):
 	args = {}
 	args.update(csrf(request))

@@ -10,3 +10,5 @@ class RegAdminForm(forms.ModelForm):
 	class Meta:
 		model = RegAdmin
 		fields = ['regAdminfirstname','regAdminlastname','regAdminusername','regAdminemail','regAdminpassword','regAdminmobilenumber','regAdminaddress']
+
+class 
